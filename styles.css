@@ -1,0 +1,97 @@
+h4,
+h5 {
+  font-weight: unset;
+  font-size: 20px;
+  margin-top: 15px;
+}
+h5 {
+  margin-bottom: 25px;
+  padding-left: 15px;
+}
+h6 {
+  font-weight: unset;
+  font-size: 15px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+.container {
+  margin-top: 50px;
+}
+.app {
+  height: 480px;
+  padding: inherit;
+}
+.form-control {
+  width: 85%;
+}
+.current-button {
+  position: relative;
+  bottom: 38px;
+  left: 14px;
+  line-height: 1.55;
+  padding: 0.375rem 0.2rem;
+}
+.show-weather {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+.main-output {
+  height: 180px;
+}
+.info {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  justify-content: center;
+  align-content: space-between;
+  padding-left: 10px;
+}
+.city {
+  border-right: 1px solid blue;
+  font-size: 25px;
+  position: relative;
+  top: 60px;
+  height: 50px;
+}
+.emoji {
+  font-size: 35px;
+  position: relative;
+  top: 55px;
+}
+.summary {
+  padding: 10px 30px;
+  position: relative;
+  bottom: 65px;
+  left: 20px;
+}
+.condition,
+.temperature {
+  font-size: 20px;
+  list-style: none;
+}
+.celsius-fahrenheit {
+  font-size: 10px;
+  position: relative;
+  bottom: 8px;
+}
+.forecast {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  height: 435px;
+}
+.next-days {
+  padding-left: 15px;
+  list-style-type: none;
+}
+.today {
+  position: relative;
+  bottom: 235px;
+  height: 235px;
+}
+.min-max,
+.humidity-wind {
+  padding-left: 15px;
+  font-size: 13px;
+  margin: 0;
+}

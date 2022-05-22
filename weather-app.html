@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homework-w2.html</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/a9885b4263.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+    <div class="card app" style="width: 40rem;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8 card-body show-weather main-output">
+              <form id="search-city">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter city"
+                    autofocus="on"
+                    id="enter-city"
+                  />
+                  <button type="button" class="btn btn-light float-right current-button" id="current-location-button">Current</button>
+                </div>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-6 city" id="city">Paris</div>
+                    <div class="col-6 emoji">
+                    <div id="emoji">
+                     ☀ 
+                    </div>
+                     <ul class="float-right summary">
+                       <li class="condition" id="condition">Sunny</li>
+                       <li class="temperature"> <span id="degrees">18</span> <span class="celsius-fahrenheit"> <a href="#" id="celsius-temp">°C </a> <a href="#" id="fahrenheit-temp">| °F</a> </span></li>
+                     </ul>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col">
+                <div class="forecast">
+                  <h5>5-days forecast</h5>
+                  <ul class="next-days">
+                    <li class="days">
+                      Tomorrow
+                      <br />
+                      <p>🌤 16°</p>
+                    </li>
+                    <li class="days">
+                      Thusday
+                      <br />
+                      <p>☀ 18°</p>
+                    </li>
+                    <li class="days">
+                      Wednesday
+                      <br />
+                      <p>☁ 15°</p>
+                    </li>
+                    <li class="days">
+                      Thursday
+                      <br />
+                      <p>🌧 13°</p>
+                    </li>
+                    <li class="days">
+                      Friday
+                      <p>🌥 15°</p>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8 today show-weather">
+              <form>
+                <div>
+                  <h4 id="today-time">Today 13:37</h4>
+                  <h6 id="actual-date">18/04/2022</h6>
+                  <div class="row">
+                    <div class="col-6">
+                      <ul class="min-max">
+                        <li id="min">min 7°</li>
+                        <li id="max">max 18°</li>
+                      </ul>
+                    </div>
+                    <div class="col-6">
+                      <ul class="humidity-wind">
+                        <li id="humidity">humidity 5%</li>
+                        <li id="wind">wind 2km/h</li>
+                      </ul>
+                    </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                      <div class="col-3">Night</div>
+                      <div class="col-3">Morning</div>
+                      <div class="col-3">Midday</div>
+                      <div class="col-3">Evening</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-3">🌙</div>
+                      <div class="col-3">⛅</div>
+                      <div class="col-3">🌞</div>
+                      <div class="col-3">🌃</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-3">5°</div>
+                      <div class="col-3">8°</div>
+                      <div class="col-3">16°</div>
+                      <div class="col-3">10°</div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
