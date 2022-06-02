@@ -112,4 +112,4 @@ function showCurrentLocationTemperature(event) {
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", showCurrentLocationTemperature);
 
-showDefaultWeather("New York");
+showDefaultWeather("Brussel");
