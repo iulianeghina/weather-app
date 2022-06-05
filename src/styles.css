@@ -51,13 +51,14 @@ h6 {
   border-right: 1px solid blue;
   font-size: 25px;
   position: relative;
-  top: 60px;
+  top: 5px;
   height: 50px;
 }
 .emoji {
   font-size: 35px;
   position: relative;
-  top: 55px;
+  top: 5px;
+  height: 50px;
 }
 .summary {
   padding: 10px 30px;
