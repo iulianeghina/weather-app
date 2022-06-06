@@ -35,8 +35,9 @@ actualDate.innerHTML = `${date}/${month}/${year}`;
 
 function showWeatherInSearchedCity(response) {
   document.querySelector("#city").innerHTML = response.data.name;
+  celsiusTemperature = response.data.main.temp;
   let temperature = document.querySelector("#degrees");
-  let roundTemperature = Math.round(response.data.main.temp);
+  let roundTemperature = Math.round(celsiusTemperature);
   temperature.innerHTML = roundTemperature;
   let weatherCondition = document.querySelector("#condition");
   weatherCondition.innerHTML = response.data.weather[0].main;
@@ -73,22 +74,29 @@ function searchWeather(event) {
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("submit", searchWeather);
 
-function showCelsiusTemperature() {
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusTemp.classList.remove("active");
+  fahrenheitTemp.classList.add("active");
   let degrees = document.querySelector("#degrees");
-  let degreesFahrenheit = Math.round(degrees.innerHTML * 1.8 + 32);
+  let degreesFahrenheit = Math.round(celsiusTemperature * 1.8 + 32);
   degrees.innerHTML = `${degreesFahrenheit}`;
 }
 
-function showFahrenheitTemperature() {
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusTemp.classList.add("active");
+  fahrenheitTemp.classList.remove("active");
   let degrees = document.querySelector("#degrees");
-  let degreesCelsius = Math.round((5 / 9) * (degrees.innerHTML - 32));
-  degrees.innerHTML = `${degreesCelsius}`;
+  degrees.innerHTML = Math.round(celsiusTemperature);
 }
 
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
-fahrenheitTemp.addEventListener("click", showCelsiusTemperature);
+fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
 let celsiusTemp = document.querySelector("#celsius-temp");
-celsiusTemp.addEventListener("click", showFahrenheitTemperature);
+celsiusTemp.addEventListener("click", showCelsiusTemperature);
+
+let celsiusTemperature = null;
 
 function showDefaultWeather(city) {
   let apiKey = "e0627f6356ddf3111af3ae2f46c9bf52";
