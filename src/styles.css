@@ -14,6 +14,11 @@ h6 {
   margin: 0;
   margin-bottom: 15px;
 }
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
 .container {
   margin-top: 50px;
 }
@@ -54,17 +59,16 @@ h6 {
   top: 5px;
   height: 50px;
 }
-.emoji {
+.icon {
   font-size: 35px;
   position: relative;
   top: 5px;
   height: 50px;
 }
 .summary {
-  padding: 10px 30px;
   position: relative;
-  bottom: 65px;
-  left: 20px;
+  bottom: 105px;
+  left: 85px;
 }
 .condition,
 .temperature {
@@ -99,4 +103,8 @@ h6 {
 .link {
   position: relative;
   top: 15px;
+}
+.image {
+  position: relative;
+  bottom: 25px;
 }

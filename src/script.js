@@ -40,16 +40,15 @@ function showWeatherInSearchedCity(response) {
   temperature.innerHTML = roundTemperature;
   let weatherCondition = document.querySelector("#condition");
   weatherCondition.innerHTML = response.data.weather[0].main;
-  let emoji = document.querySelector("#emoji");
-  if (weatherCondition.innerHTML === "Clouds") {
-    emoji.innerHTML = "☁";
-  } else if (weatherCondition.innerHTML === "Rain") {
-    emoji.innerHTML = "🌧";
-  } else if (weatherCondition.innerHTML === "Snow") {
-    emoji.innerHTML = "❄";
-  } else {
-    emoji.innerHTML = "☀";
-  }
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute(
+    "alt",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+  );
   let minTemp = document.querySelector("#min");
   let roundedMinTemp = Math.round(response.data.main["temp_min"]);
   minTemp.innerHTML = `min ${roundedMinTemp}°`;
