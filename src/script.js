@@ -74,6 +74,40 @@ function searchWeather(event) {
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("submit", searchWeather);
 
+function curretDayForecast() {
+  let dayInterval = document.querySelector("#day-interval");
+  let dayForecastHTML = `<div class="row">`;
+  let intervals = ["Night", "Morning", "Midday", "Evenig"];
+  intervals.forEach(function (interval) {
+    dayForecastHTML =
+      dayForecastHTML +
+      `
+       <div class="col-3 day-interval">
+        <div class="night">${interval}</div>
+        <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="clar-sky-night" width="35px">
+        <div class="night-temperature">5°</div>
+        </div>`;
+  });
+  dayInterval.innerHTML = dayForecastHTML;
+  dayForecastHTML = dayForecastHTML + `</div>`;
+}
+
+function commingDaysForecast() {
+  let nextDayForecast = document.querySelector("#comming-days-forecast");
+  let commmingDaysForecastHTML = `<div>`;
+  let days = ["Tomorrow", "Monday", "Thusday", "Wednesday", "Thursday"];
+  days.forEach(function (day) {
+    commmingDaysForecastHTML =
+      commmingDaysForecastHTML +
+      `<li class="days">${day}
+                    <br />
+                    <p> <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="clar-sky-night" width="35px"> 16°</p>
+                  </li>`;
+  });
+  nextDayForecast.innerHTML = commmingDaysForecastHTML;
+  commmingDaysForecastHTML = commmingDaysForecastHTML + `</div>`;
+}
+
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusTemp.classList.remove("active");
@@ -120,3 +154,5 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", showCurrentLocationTemperature);
 
 showDefaultWeather("Brussel");
+curretDayForecast();
+commingDaysForecast();

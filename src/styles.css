@@ -85,7 +85,7 @@ ul {
   border-radius: 5px;
   height: 435px;
 }
-.next-days {
+.comming-days-forecast {
   padding-left: 15px;
   list-style-type: none;
 }
@@ -114,4 +114,10 @@ ul {
 }
 .active:hover {
   text-decoration: none;
+}
+.day-interval-forecast {
+  text-align: center;
+}
+.day-interval {
+  padding-left: 0;
 }
