@@ -92,7 +92,7 @@ function curretDayForecast(response) {
     dayForecastHTML +
     `
        <div class="col-3 day-interval">
-        <div class="night">Morning</div>
+        <div class="morning">Morning</div>
         <div class = "interval-temperature"> 🌡 </div>
         <div class="over-the-day-temperature">${Math.round(
           forecast[0].temp.morn
@@ -102,7 +102,7 @@ function curretDayForecast(response) {
     dayForecastHTML +
     `
        <div class="col-3 day-interval">
-        <div class="night">Midday</div>
+        <div class="midday">Midday</div>
         <div class = "interval-temperature"> 🌡 </div>
         <div class="over-the-day-temperature">${Math.round(
           forecast[0].temp.day
@@ -112,7 +112,7 @@ function curretDayForecast(response) {
     dayForecastHTML +
     `
        <div class="col-3 day-interval">
-        <div class="night">Evening</div>
+        <div class="evening">Evening</div>
         <div class = "interval-temperature"> 🌡 </div>
         <div class="over-the-day-temperature">${Math.round(
           forecast[0].temp.eve
@@ -156,15 +156,18 @@ function commingDaysForecast(response) {
     if (index > 0 && index < 6) {
       commmingDaysForecastHTML =
         commmingDaysForecastHTML +
-        `<li class="days">${formatDayForecast(forecastDay.dt)}
-                    <br />
-                    <p> <img src="http://openweathermap.org/img/wn/${
+        `<li><span class = "days-forecast">${formatDayForecast(
+          forecastDay.dt
+        )}</span>
+                    <div class = "forecast-temp"> <img src="http://openweathermap.org/img/wn/${
                       forecastDay.weather[0].icon
                     }@2x.png" alt=${
           forecastDay.weather[0].description
-        } width="35px"> <span>${Math.round(
+        } width="35px"> <span class = "forecast-max-temp">${Math.round(
           forecastDay.temp.max
-        )}°</span> / ${Math.round(forecastDay.temp.min)}°</p>
+        )}°</span> / <span class = "forecast-min-temp">${Math.round(
+          forecastDay.temp.min
+        )}°</span></div>
                   </li>`;
     }
   });

@@ -1,3 +1,6 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
 h4,
 h5 {
   font-weight: unset;
@@ -23,6 +26,7 @@ ul {
   margin-top: 50px;
 }
 .app {
+  background: linear-gradient(to top, #fde7dd 0%, #ace0f9 100%);
   height: 480px;
   padding: inherit;
 }
@@ -54,7 +58,7 @@ ul {
 }
 .city {
   border-right: 1px solid blue;
-  font-size: 25px;
+  font-size: 30px;
   position: relative;
   top: 5px;
   height: 50px;
@@ -123,5 +127,21 @@ ul {
   padding-right: 0;
 }
 .interval-temperature {
+  font-size: 25px;
+}
+.days-forecast {
   font-size: 20px;
+}
+.forecast-temp {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.forecast-max-temp {
+  font-weight: 600;
+}
+.forecast-min-temp {
+  opacity: 0.8;
+}
+.over-the-day-temperature {
+  font-size: 16px;
 }
