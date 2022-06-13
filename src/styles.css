@@ -120,4 +120,8 @@ ul {
 }
 .day-interval {
   padding-left: 0;
+  padding-right: 0;
+}
+.interval-temperature {
+  font-size: 20px;
 }
