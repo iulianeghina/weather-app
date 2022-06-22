@@ -70,38 +70,6 @@ function showWeatherInSearchedCity(response) {
   let wind = document.querySelector("#wind");
   let roundedWindSpeed = Math.round(response.data.wind.speed);
   wind.innerHTML = `wind ${roundedWindSpeed}km/h`;
-  let weatherStatus = response.data.weather[0].main;
-  if (weatherStatus === "Clouds" && hour < 21) {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/060/original/clouds-day.gif?1655835901)";
-  } else if (weatherStatus === "Clouds" && hour > 21) {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/012/original/clouds-night-sky.gif?1655827607)";
-  } else if (weatherStatus === "Rain" && hour < 21) {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/061/original/raining-day.gif?1655836905)";
-  } else if (weatherStatus === "Rain" && hour > 21) {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/062/original/raining-night.gif?1655836916)";
-  } else if (weatherStatus === "Snow" && hour < 21) {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/063/original/snow-snowing-day.gif?1655836936)";
-  } else if (weatherStatus === "Snow" && hour > 21) {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/064/original/snowing-night.gif?1655836943)";
-  } else if (weatherStatus === "Mist") {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/067/original/mist.gif?1655836993)";
-  } else if (weatherStatus === "Thunderstorm") {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/066/original/thunderstorm.gif?1655836971)";
-  } else if (weatherStatus === "Clear" && hour > 21) {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/065/original/stars-night-sky.gif?1655836956)";
-  } else {
-    document.querySelector("#app").style.backgroundImage =
-      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/037/997/original/clear-sky-day.gif?1655826510)";
-  }
   showWeatherForecast(response.data.coord);
 }
 

@@ -1,7 +1,7 @@
 body {
   font-family: "Source Sans Pro", sans-serif;
-  color: rgb(133, 33, 214);
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/037/995/original/body-background.jpeg?1655826416");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/176/original/pexels-photo-6389394.jpeg?1655930626");
+  background-size: cover;
 }
 h4,
 h5 {
@@ -28,7 +28,7 @@ ul {
   margin-top: 50px;
 }
 .app {
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/037/997/original/clear-sky-day.gif?1655826510");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/167/original/sun-cloud.gif?1655928974");
   background-size: cover;
   height: 480px;
   padding: inherit;
