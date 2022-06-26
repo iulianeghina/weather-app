@@ -3,6 +3,7 @@ body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/176/original/pexels-photo-6389394.jpeg?1655930626");
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 h4,
 h5 {
