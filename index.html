@@ -13,18 +13,24 @@
     />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://kit.fontawesome.com/a9885b4263.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/a9885b4263.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-     <div class="card app" id="app">
-        <div class="card-body">
+    <div class="app" id="app">
+      <div class="container">
+        <div class="weather">
           <div class="row">
-            <div class="col-8 card-body show-weather main-output">
-              <form id="search-city">
+            <div class="col-8 main-output">
+              <form class="search-form" id="search-city">
                 <div class="form-group">
                   <input
                     autocomplete="off"
@@ -34,35 +40,33 @@
                     autofocus="on"
                     id="enter-city"
                   />
-                  <button type="button" class="btn btn-success float-right current-button" id="current-location-button">Current</button>
                 </div>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-6 city" id="city">Paris</div>
-                    <div class="col-6 icon">
-                      <img class="float-left image" id="icon" src="#" alt="#">
-                     <ul class="summary float-left">
-                       <li class="condition" id="condition">Clear</li>
-                       <li class="temperature"> <span id="degrees">18</span> °C </li>
-                     </ul>
-                    </div>
-                  </div>
+                <div class="search-button">
+                  <button
+                    type="button"
+                    class="btn btn-primary float-right current-button"
+                    id="current-location-button"
+                  >
+                    Current
+                  </button>
                 </div>
               </form>
-            </div>
-            <div class="col">
-                <div class="forecast">
-                  <h5>5-days forecast</h5>
-                  <ul class="comming-days-forecast" id="comming-days-forecast">
-                  ""
-                </ul>
+              <div class="info">
+                <div class="row">
+                  <div class="col-sm-6 city" id="city">Paris</div>
+                  <div class="col-sm-6 icon">
+                    <img class="image" id="icon" src="#" alt="#" />
+                    <ul class="summary">
+                      <li class="condition" id="condition">Clear</li>
+                      <li class="temperature">
+                        <span id="degrees">18</span> °C
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-8 today show-weather">
-              <form>
-                <div>
+              </div>
+              <div class="row">
+                <div class="col-10">
                   <h4 id="today-time">Today 13:37</h4>
                   <h6 id="actual-date">18/04/2022</h6>
                   <div class="row">
@@ -78,17 +82,36 @@
                         <li id="wind">wind 2km/h</li>
                       </ul>
                     </div>
-                    </div>
-                    <br />
-                  <div class="day-interval-forecast" id="day-interval">""</div>
                   </div>
+                  <br />
+                  <div class="day-interval-forecast" id="day-interval">""</div>
                 </div>
-              </form>
-          </div>    
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="forecast">
+                <h5>5-days forecast</h5>
+                <ul class="comming-days-forecast" id="comming-days-forecast">
+                  ""
+                </ul>
+              </div>
+            </div>
+          </div>
+          <footer>
+            This project was coded by <span>Iulia Neghina</span> and is
+            <a
+              href="https://github.com/iulianeghina/weather-app"
+              target="_blank"
+              >open-sourced on GitHub</a
+            >
+            and
+            <a href="https://dulcet-kleicha-0d4357.netlify.app/" target="_blank"
+              >hosted on Netlify</a
+            >
+          </footer>
         </div>
       </div>
-       <a class="link" href="https://github.com/iulianeghina/weather-app" target="_blank">GitHub repository</a>
-   </div>    
-       <script src="src/script.js"></script>
+    </div>
+    <script src="src/script.js"></script>
   </body>
 </html>

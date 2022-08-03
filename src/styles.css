@@ -9,7 +9,6 @@ h4,
 h5 {
   font-weight: unset;
   font-size: 20px;
-  margin-top: 15px;
 }
 h5 {
   margin-bottom: 25px;
@@ -26,31 +25,23 @@ ul {
   margin-block-end: 0;
   padding-inline-start: 0;
 }
-.container {
-  margin-top: 50px;
-}
 .app {
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/038/167/original/sun-cloud.gif?1655928974");
-  background-size: cover;
-  height: 480px;
-  padding: inherit;
-  display: block;
-  margin: 0 auto;
-  width: 39rem;
+  margin: 60px auto;
+  max-width: 800px;
+}
+.form-group {
+  margin-bottom: unset;
+  flex-grow: 3;
 }
 .form-control {
-  width: 85%;
+  width: 75%;
+  background-color: #e6f7f7;
 }
 .current-button {
-  position: relative;
-  bottom: 38px;
-  left: 14px;
   line-height: 1.55;
-  padding: 0.375rem 0.2rem;
-}
-.show-weather {
-  border: 1px solid #ced4da;
-  border-radius: 5px;
+  padding: 0.375rem 1.2rem;
+  position: relative;
+  left: -75px;
 }
 .main-output {
   height: 180px;
@@ -59,32 +50,29 @@ ul {
   width: 85%;
   display: flex;
   flex-direction: column;
-  height: 30px;
   justify-content: center;
   align-content: space-between;
-  padding-left: 10px;
+  padding: 30px 0;
 }
 .city {
   border-right: 1px solid blue;
-  font-size: 30px;
+  font-size: 40px;
   position: relative;
-  top: 5px;
   height: 50px;
 }
 .icon {
   font-size: 35px;
   position: relative;
-  top: 5px;
   height: 50px;
 }
 .summary {
   position: relative;
-  bottom: 105px;
-  left: 85px;
+  bottom: 120px;
+  left: 90px;
 }
 .condition,
 .temperature {
-  font-size: 20px;
+  font-size: 30px;
   list-style: none;
 }
 .celsius-fahrenheit {
@@ -93,9 +81,7 @@ ul {
   bottom: 8px;
 }
 .forecast {
-  border: 1px solid #ced4da;
   border-radius: 5px;
-  height: 435px;
 }
 .comming-days-forecast {
   padding-left: 15px;
@@ -123,15 +109,9 @@ ul {
   position: relative;
   bottom: 25px;
 }
-.active {
-  color: black;
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
-}
 .day-interval-forecast {
   text-align: center;
+  margin-top: 13px;
 }
 .day-interval {
   padding-left: 0;
@@ -156,8 +136,62 @@ ul {
 .over-the-day-temperature {
   font-size: 16px;
 }
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.weather {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  padding: 40px;
+  background-color: #fffde1;
+}
+footer {
+  font-size: 14px;
+  margin-top: 40px;
+  line-height: 18px;
+  text-align: center;
+  border-top: 1px solid black;
+}
+.search-form {
+  display: flex;
+  flex: 2 1 auto;
+  padding-bottom: 30px;
+}
+@media (max-width: 430px) {
+  .search-form {
+    flex-direction: column;
+    flex: 0 0 auto;
+    padding-bottom: 5px;
+  }
+  .current-button {
+    line-height: 1.55;
+    padding: 10px 65px;
+    position: relative;
+    left: 5px;
+  }
+  .form-control {
+    width: 105%;
+    margin-bottom: 10px;
+  }
+  .info {
+    padding-top: unset;
+  }
+  .city {
+    border-right: none;
+    margin-bottom: 10px;
+  }
+  .condition,
+  .temperature {
+    font-size: 25px;
+    position: relative;
+    top: 10px;
+  }
+  .icon {
+    right: 20px;
+  }
+  .comming-days-forecast {
+    position: relative;
+    top: 32px;
+  }
+  .day-interval-forecast {
+    margin-top: unset;
+  }
 }

@@ -91,7 +91,7 @@ function curretDayForecast(response) {
   dayForecastHTML =
     dayForecastHTML +
     `
-       <div class="col-3 day-interval">
+       <div class="col-sm-3 col-6 day-interval">
         <div class="morning">Morning</div>
         <div class = "interval-temperature"> 🌡 </div>
         <div class="over-the-day-temperature">${Math.round(
@@ -101,7 +101,7 @@ function curretDayForecast(response) {
   dayForecastHTML =
     dayForecastHTML +
     `
-       <div class="col-3 day-interval">
+       <div class="col-sm-3 col-6 day-interval">
         <div class="midday">Midday</div>
         <div class = "interval-temperature"> 🌡 </div>
         <div class="over-the-day-temperature">${Math.round(
@@ -111,7 +111,7 @@ function curretDayForecast(response) {
   dayForecastHTML =
     dayForecastHTML +
     `
-       <div class="col-3 day-interval">
+       <div class="col-sm-3 col-6 day-interval">
         <div class="evening">Evening</div>
         <div class = "interval-temperature"> 🌡 </div>
         <div class="over-the-day-temperature">${Math.round(
@@ -121,7 +121,7 @@ function curretDayForecast(response) {
   dayForecastHTML =
     dayForecastHTML +
     `
-       <div class="col-3 day-interval">
+       <div class="col-sm-3 col-6 day-interval">
         <div class="night">Night</div>
         <div class = "interval-temperature"> 🌡 </div>
         <div class="over-the-day-temperature">${Math.round(
