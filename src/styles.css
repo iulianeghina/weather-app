@@ -87,11 +87,6 @@ ul {
   padding-left: 15px;
   list-style-type: none;
 }
-.today {
-  position: relative;
-  bottom: 235px;
-  height: 235px;
-}
 .min-max,
 .humidity-wind {
   padding-left: 15px;
@@ -155,7 +150,7 @@ footer {
   flex: 2 1 auto;
   padding-bottom: 30px;
 }
-@media (max-width: 430px) {
+@media (max-width: 540px) {
   .search-form {
     flex-direction: column;
     flex: 0 0 auto;
@@ -166,6 +161,7 @@ footer {
     padding: 10px 65px;
     position: relative;
     left: 5px;
+    width: 100%;
   }
   .form-control {
     width: 105%;
@@ -193,5 +189,15 @@ footer {
   }
   .day-interval-forecast {
     margin-top: unset;
+  }
+}
+@media (min-width: 430px) and (max-width: 540px) {
+  div > h5 {
+    font-size: 32px;
+    padding-top: 10px;
+  }
+  .comming-days-forecast {
+    padding-bottom: 50px;
+    padding-top: 12px;
   }
 }
