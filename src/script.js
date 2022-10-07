@@ -1,45 +1,52 @@
-let currentDate = new Date();
-let date = currentDate.getDate();
-if (date < 10) {
-  date = `0${date}`;
-}
-let month = currentDate.getUTCMonth() + 1;
-if (month < 10) {
-  month = `0${month}`;
-}
-let year = currentDate.getFullYear();
-let hour = currentDate.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minutes = currentDate.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Thusday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Suturday",
-];
-let currentDayAndTime = document.querySelector("#today-time");
-currentDayAndTime.innerHTML = `${
-  days[currentDate.getDay()]
-} ${hour}:${minutes}`;
-
-let actualDate = document.querySelector("#actual-date");
-actualDate.innerHTML = `${date}/${month}/${year}`;
-
 function showWeatherForecast(coordinates) {
   let apiKey = "faa261b304bfc269bca49770138629cd";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  let apiUrlCurrentDayForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric&cnt=8`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(commingDaysForecast);
   axios.get(apiUrl).then(curretDayForecast);
+}
+
+function showCurrentDateAndTime(response) {
+  let currentDate = new Date();
+  let timezone = response.data.timezone;
+
+  localTime = currentDate.getTime();
+  localOffset = currentDate.getTimezoneOffset() * 60000;
+  utc = localTime + localOffset;
+  let cityDateCode = utc + 1000 * timezone;
+  let cityDate = new Date(cityDateCode);
+
+  let date = cityDate.getDate();
+  if (date < 10) {
+    date = `0${date}`;
+  }
+  let month = cityDate.getMonth() + 1;
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  let year = cityDate.getFullYear();
+
+  let hour = cityDate.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = cityDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Thusday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Suturday",
+  ];
+  let currentDayAndTime = document.querySelector("#today-time");
+  currentDayAndTime.innerHTML = `${days[cityDate.getDay()]} ${hour}:${minutes}`;
+
+  let actualDate = document.querySelector("#actual-date");
+  actualDate.innerHTML = `${date}/${month}/${year}`;
 }
 
 function showWeatherInSearchedCity(response) {
@@ -79,6 +86,7 @@ function searchWeather(event) {
   let apiKey = "faa261b304bfc269bca49770138629cd";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherInSearchedCity);
+  axios.get(apiUrl).then(showCurrentDateAndTime);
 }
 
 let searchCity = document.querySelector("#search-city");
@@ -148,7 +156,6 @@ function formatDayForecast(timestamp) {
 }
 
 function commingDaysForecast(response) {
-  console.log(response.data);
   let forecast = response.data.daily;
   let nextDayForecast = document.querySelector("#comming-days-forecast");
   let commmingDaysForecastHTML = `<div>`;
@@ -179,6 +186,7 @@ function showDefaultWeather(city) {
   let apiKey = "faa261b304bfc269bca49770138629cd";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherInSearchedCity);
+  axios.get(apiUrl).then(showCurrentDateAndTime);
 }
 
 function showCurrentLocationTemperature(event) {
@@ -190,8 +198,8 @@ function showCurrentLocationTemperature(event) {
     let apiKey = "faa261b304bfc269bca49770138629cd";
     let apiUrlCurrentPosition = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlCurrentPosition).then(showWeatherInSearchedCity);
+    axios.get(apiUrlCurrentPosition).then(showCurrentDateAndTime);
   }
-
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 let currentLocationButton = document.querySelector("#current-location-button");
