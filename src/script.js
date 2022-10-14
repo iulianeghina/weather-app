@@ -50,7 +50,13 @@ function showCurrentDateAndTime(response) {
 }
 
 function showWeatherInSearchedCity(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  let cityName = response.data.name;
+  document.querySelector("#city").innerHTML = cityName;
+  if (cityName.length > 15) {
+    document.querySelector("#city").style.fontSize = "18px";
+  } else if (cityName.length >= 8 && cityName.length < 15) {
+    document.querySelector("#city").style.fontSize = "38px";
+  }
   celsiusTemperature = response.data.main.temp;
   let temperature = document.querySelector("#degrees");
   let roundTemperature = Math.round(celsiusTemperature);
