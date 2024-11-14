@@ -90,7 +90,7 @@ function searchWeather(event) {
   event.preventDefault();
   let city = document.querySelector("#enter-city").value;
   let apiKey = "faa261b304bfc269bca49770138629cd";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherInSearchedCity);
   axios.get(apiUrl).then(showCurrentDateAndTime);
 }
@@ -190,7 +190,7 @@ function commingDaysForecast(response) {
 
 function showDefaultWeather(city) {
   let apiKey = "faa261b304bfc269bca49770138629cd";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherInSearchedCity);
   axios.get(apiUrl).then(showCurrentDateAndTime);
 }
@@ -202,7 +202,7 @@ function showCurrentLocationTemperature(event) {
     let longitude = position.coords.longitude;
 
     let apiKey = "faa261b304bfc269bca49770138629cd";
-    let apiUrlCurrentPosition = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    let apiUrlCurrentPosition = `https://api.openweathermap.org/data/3.0/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrlCurrentPosition).then(showWeatherInSearchedCity);
     axios.get(apiUrlCurrentPosition).then(showCurrentDateAndTime);
   }
